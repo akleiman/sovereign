@@ -1,0 +1,110 @@
+---
+###############################################################################
+# Set your variables here.
+# For a complete reference look at the `vars/defaults.yml` file.
+###############################################################################
+
+# common
+domain: obbr.net
+main_user_name: kleiman
+encfs_password: n0rt0n11
+
+# database
+db_admin_username: postgres
+db_admin_password: n0rt0n11
+
+# ircbouncer
+irc_nick: obobo
+irc_ident: obobo
+irc_realname: Alan Kleiman
+irc_quitmsg: x 
+irc_password_hash: d3a9bacf4ba0fd702db5df94170032cd81eae4a3835eb679ea30b1a1970df25f
+irc_password_salt: ggbltWagxSeD;?fcZhc5
+irc_timezone: America/Sao_Paulo      #Example: "America/New_York"
+
+# mailserver
+mail_db_password: n0rt0n11
+mail_virtual_domains:
+  - name: "{{ domain }}"
+    pk_id: 1
+#  - name: TODO.com
+#    pk_id: 2
+mail_virtual_users:
+  - account: "{{ main_user_name }}"
+    domain: "{{ domain }}"
+    password_hash: $6$gBFDWABylsziXqhl$ClgLl78IPCnUE5imEpbMcRbIHyzlLmLxE6OshYkumqD/LymfYekFvifLMkDqpW9YG0Q19t5uYUcmiIqJJEwao.
+    domain_pk_id: 1
+  - account: "obobo"
+    domain: "{{ domain }}"
+    password_hash: $6$gBFDWABylsziXqhl$ClgLl78IPCnUE5imEpbMcRbIHyzlLmLxE6OshYkumqD/LymfYekFvifLMkDqpW9YG0Q19t5uYUcmiIqJJEwao.
+    domain_pk_id: 1
+  - account: "admin"
+    domain: "{{ domain }}"
+    password_hash: $6$gBFDWABylsziXqhl$ClgLl78IPCnUE5imEpbMcRbIHyzlLmLxE6OshYkumqD/LymfYekFvifLMkDqpW9YG0Q19t5uYUcmiIqJJEwao.
+    domain_pk_id: 1
+  - account: "taw001"
+    domain: "{{ domain }}"
+    password_hash: $6$gBFDWABylsziXqhl$ClgLl78IPCnUE5imEpbMcRbIHyzlLmLxE6OshYkumqD/LymfYekFvifLMkDqpW9YG0Q19t5uYUcmiIqJJEwao.
+    domain_pk_id: 1
+  - account: "taw002"
+    domain: "{{ domain }}"
+    password_hash: $6$gBFDWABylsziXqhl$ClgLl78IPCnUE5imEpbMcRbIHyzlLmLxE6OshYkumqD/LymfYekFvifLMkDqpW9YG0Q19t5uYUcmiIqJJEwao.
+    domain_pk_id: 1
+  - account: "taw003"
+    domain: "{{ domain }}"
+    password_hash: $6$gBFDWABylsziXqhl$ClgLl78IPCnUE5imEpbMcRbIHyzlLmLxE6OshYkumqD/LymfYekFvifLMkDqpW9YG0Q19t5uYUcmiIqJJEwao.
+    domain_pk_id: 1
+#  - account: "taw004"
+#    domain: "{{ domain }}"
+#    password_hash: $6$gBFDWABylsziXqhl$ClgLl78IPCnUE5imEpbMcRbIHyzlLmLxE6OshYkumqD/LymfYekFvifLMkDqpW9YG0Q19t5uYUcmiIqJJEwao.
+#    domain_pk_id: 1
+mail_virtual_aliases:
+  - source: "root@{{ domain }}"
+    destination: "{{ admin_email }}"
+    domain_pk_id: 1
+  - source: "postmaster@{{ domain }}"
+    destination: "{{ admin_email }}"
+    domain_pk_id: 1
+  - source: "webmaster@{{ domain }}"
+    destination: "{{ admin_email }}"
+    domain_pk_id: 1
+mail_header_privacy: 1
+
+# z-push
+zpush_timezone: "America/Sao_Paulo"  #Example: "America/New_York"
+
+# owncloud
+owncloud_db_password: n0rt0n11
+
+# vpn
+openvpn_key_country:  "BR"
+openvpn_key_province: "Sao Paulo"
+openvpn_key_city: "Campinas"
+openvpn_key_org: "ACME CORPORATION"
+openvpn_key_ou: "Anvil Department"
+openvpn_clients:
+  - laptop
+  - phone
+  - tablet
+
+# webmail
+webmail_db_password: n0rt0n11
+
+# xmpp
+prosody_admin: "{{ admin_email }}"
+prosody_virtual_domain: "{{ domain }}"
+prosody_accounts:
+  - name: "{{ main_user_name }}"
+    password: n0rt0n11
+
+# selfoss
+selfoss_db_password: "n0rt0n11"
+selfoss_username: "{{ main_user_name }}"
+# this is the sha512 hash of the desired password
+selfoss_password_hash: "96c50daf0a03ed7a162b0aadbe9ded7e7f7e5a15b09b931daa64332ada10ba5f2de2b94d2a9efa389298d5a3cef7c27ce262f62926319e9680adf447eb3e346b"
+
+# wallabag
+wallabag_salt: soysauce
+wallabag_db_password: n0rt0n11
+
+mail_db_opendmarc_password: n0rt0n11
